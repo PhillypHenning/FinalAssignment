@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class ProcessStudent {
+public class StudentProcess {
 
 
 	
@@ -96,4 +96,3 @@ public class ProcessStudent {
 	System.out.print(j);	
 	}
 }
-
