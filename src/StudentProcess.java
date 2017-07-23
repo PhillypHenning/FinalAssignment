@@ -7,10 +7,6 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class StudentProcess {
-
-
-	
-	
 	// Task 1 
 	public static void main(String[] args){
 		Student[] students = {
@@ -85,7 +81,7 @@ public class StudentProcess {
 	//Task 8
 	System.out.println("Task 8 \nCount of Students by department:");
 	studentsByDepartment.forEach((k,v) -> 
-		System.out.println(k + " has " + v.size()+ " Student" + ((v.size() > 1) ? "s" : ""))
+		System.out.println(k + " has " + v.size()+ " Student" + ((v.size() > 1) ? "s" : "")) //I just want to point out this ternary which isn't a static (s)... gross!
 	);
 	System.out.print("\n"); //Spacing / clarity
 	
