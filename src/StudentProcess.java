@@ -7,10 +7,6 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class StudentProcess {
-
-
-	
-	
 	// Task 1 
 	public static void main(String[] args){
 		Student[] students = {
@@ -62,7 +58,6 @@ public class StudentProcess {
 	System.out.println("Task 5\nUnique Student last names:");
 	Set<String> a = studs.stream().map(Student::getLastName).collect(Collectors.toSet());
 	a.stream().sorted((s1, s2) -> s1.compareTo(s2)).forEach(System.out::println);
-	// Learning experience, in a stream each action taken is sequential, therefore the sort happens prior to the print.
 	System.out.print("\n"); //Spacing / clarity
 	
 	
@@ -77,7 +72,6 @@ public class StudentProcess {
 	Map<String, List<Student>> studentsByDepartment = studs.stream().collect(Collectors.groupingBy(Student::getDepartment));
 	studentsByDepartment.forEach((k,v) ->     
 		System.out.println(k + ",\n\t" + v.stream().map(t-> t).collect(Collectors.toList()).toString().replace("[", "").replace("]", "") .replace(",", "\n").replace("\n ", "\n\t")) 
-	// I'm curious to know if there is a better way than this ^^
 	);
 	System.out.print("\n"); //Spacing / clarity
 	
@@ -92,7 +86,13 @@ public class StudentProcess {
 	
 	// Task 9
 	System.out.print("Task 9\nSum of Students' grades: ");
-	double j = studs.stream().mapToDouble(p -> p.getGrade()).sum();
-	System.out.print(j);	
+	double sum = studs.stream().mapToDouble(p -> p.getGrade()).sum();
+	System.out.printf("%.2f \n\n", sum);	
+	
+	
+	//Task 10
+	System.out.print("Task 10\nAverage of Students' grades: ");
+	double avg = sum / (studs.stream().count());
+	System.out.printf("%.2f", avg);
 	}
 }
